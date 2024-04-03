@@ -5,11 +5,12 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        li = []
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    li.append(i)
-                    li.append(j)
-                    return li
+        arr = {}
+        
+        for i,n in enumerate(nums):
+            diff = target - n
+            
+            if diff  in arr:
+                return[arr[diff], i]
+            arr[n] = i
                     
