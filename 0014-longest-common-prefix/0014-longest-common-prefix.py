@@ -7,5 +7,6 @@ class Solution:
         for i in range(min(len(first),len(last))):
             if(first[i]!=last[i]):
                 return ans
+                break
             ans+=first[i]
         return ans 
